@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>MiniShop — Admin</title>
+  <link href="style.css" rel="stylesheet" />
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav-inner">
+      <div class="brand">MiniShop Admin</div>
+      <div class="nav-links"><a href="index.html">Back to Shop</a></div>
+    </div>
+  </nav>
+
+  <main class="container">
+    <section class="section">
+      <h2>Add product (demo)</h2>
+      <form id="productForm">
+        <label>Title<input id="pTitle" required></label>
+        <label>Price (INR)<input id="pPrice" type="number" min="0" required></label>
+        <label>Category<input id="pCat" required></label>
+        <label>Image (file or paste URL)</label>
+        <input id="pImageFile" type="file" accept="image/*" />
+        <input id="pImageUrl" placeholder="Or paste image URL (optional)" />
+        <div style="display:flex;gap:.5rem;margin-top:.5rem">
+          <button type="submit" class="btn primary">Add Product</button>
+          <button type="button" id="clearLocal" class="btn ghost">Clear demo data</button>
+        </div>
+      </form>
+      <small class="muted">Products are saved to localStorage for this demo. To persist permanently, wire to a backend / database.</small>
+    </section>
+
+    <section class="section">
+      <h3>Existing demo products</h3>
+      <div id="adminList" class="grid"></div>
+    </section>
+  </main>
+
+  <script>
+    // Admin page script (small and self-contained)
+    // We reuse the same product storage key as the shop script
+    const STORAGE_KEY = 'mini_shop_products_v1';
+
+    function loadProducts() {
+      const raw = localStorage.getItem(STORAGE_KEY);
+      return raw ? JSON.parse(raw) : null;
+    }
+    function saveProducts(arr) { localStorage.setItem(STORAGE_KEY, JSON.stringify(arr)); }
+    function renderAdminList() {
+      const listEl = document.getElementById('adminList');
+      const products = loadProducts() || [];
+      listEl.innerHTML = products.map(p => `
+        <div class="card small">
+          <div class="thumb"><img src="${p.img}" alt="${p.title}" /></div>
+          <div class="p-body">
+            <strong>${p.title}</strong>
+            <div class="muted">${p.cat} • ₹${Number(p.price).toLocaleString('en-IN')}</div>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    document.getElementById('productForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const title = document.getElementById('pTitle').value.trim();
+      const price = Number(document.getElementById('pPrice').value);
+      const cat = document.getElementById('pCat').value.trim() || 'general';
+      const file = document.getElementById('pImageFile').files[0];
+      const url = document.getElementById('pImageUrl').value.trim();
+
+      let imgSrc = url || '';
+      if (!imgSrc && file) {
+        imgSrc = await new Promise((res) => {
+          const fr = new FileReader();
+          fr.onload = () => res(fr.result);
+          fr.readAsDataURL(file);
+        });
+      }
+
+      if (!imgSrc) {
+        imgSrc = 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" width="600" height="400"><rect width="100%" height="100%" fill="#283041"/><text x="50%" y="50%" fill="#fff" dominant-baseline="middle" text-anchor="middle">No Image</text></svg>');
+      }
+
+      const products = loadProducts() || [];
+      const id = 'p_' + Date.now();
+      products.unshift({ id, title, price, cat, img: imgSrc });
+      saveProducts(products);
+      renderAdminList();
+      e.target.reset();
+      alert('Product added to demo store (saved in localStorage).');
+    });
+
+    document.getElementById('clearLocal').addEventListener('click', () => {
+      if(confirm('Clear demo product data stored in localStorage? This will remove locally added products.')) {
+        localStorage.removeItem(STORAGE_KEY);
+        renderAdminList();
+      }
+    });
+
+    // init
+    renderAdminList();
+  </script>
+</body>
+</html>

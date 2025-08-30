@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yumm - Indian Restaurant</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            line-height: 1.6;
+            background-color: #fffaf5;
+        }
+
+        header {
+            background: url('https://images.unsplash.com/photo-1600891964599-f61ba0e24092') no-repeat center/cover;
+            height: 90vh;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 10px 20px;
+            border-radius: 10px;
+        }
+
+        nav {
+            background: #ff6600;
+            padding: 15px;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+
+        section {
+            padding: 40px 20px;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #ff6600;
+        }
+
+        .about {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .about img {
+            width: 100%;
+            max-width: 500px;
+            border-radius: 10px;
+        }
+
+        .about p {
+            flex: 1;
+        }
+
+        .menu,
+        .specials,
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .menu-item,
+        .special-item,
+        .gallery img {
+            background: #fff3e0;
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .menu-item img,
+        
+        .special-item img {
+            width: 100%;
+            border-radius: 10px;
+            height: 180px;
+            object-fit: cover;
+        }
+
+        .gallery img {
+            height: 200px;
+            object-fit: cover;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        input,
+        textarea {
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            background: #ff6600;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #e65500;
+        }
+
+        .testimonials {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .testimonial {
+            flex: 1;
+            min-width: 250px;
+            background: #fff3e0;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        iframe {
+            width: 100%;
+            height: 300px;
+            border: none;
+            border-radius: 10px;
+        }
+
+        footer {
+            background: #222;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        footer input {
+            padding: 10px;
+            border-radius: 5px;
+            border: none;
+            margin-right: 5px;
+            width: 200px;
+        }
+
+        footer button {
+            padding: 10px 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Yumm - Indian Restaurant</h1>
+        <p>Authentic flavors, unforgettable taste</p>
+    </header>
+
+    <nav>
+        <a href="#about">About</a>
+        <a href="#menu">Menu</a>
+        <a href="#specials">Specials</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#contact">Contact</a>
+        <a href="#location">Location</a>
+    </nav>
+
+    <section id="about">
+        <h2>About Us</h2>
+        <div class="about">
+            <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                alt="Restaurant interior">
+            <p>Welcome to <strong>Yumm</strong>, where we serve the best Indian cuisine in town. Our chefs bring
+                generations of traditional recipes, combined with modern presentation, to your plate. From spicy curries
+                to mouthwatering tandoori, every dish is made with fresh ingredients and a touch of love.</p>
+        </div>
+    </section>
+
+    <section id="menu">
+        <h2>Our Menu</h2>
+        <div class="menu">
+            <div class="menu-item">
+                <img src="https://images.unsplash.com/photo-1589302168068-964664d93dc0?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YmlyaXlhbml8ZW58MHx8MHx8fDA%3D"
+                    alt="Biryani">
+                <h3>Chicken Biryani</h3>
+                <p>₹250</p>
+            </div>
+            <div class="menu-item">
+                <img src="https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YnV0dGVyJTIwY2hpY2tlbnxlbnwwfHwwfHx8MA%3D%3D"
+                    alt="Butter Chicken">
+                <h3>Butter Chicken</h3>
+                <p>₹300</p>
+            </div>
+            <div class="menu-item">
+                <img src="https://images.unsplash.com/photo-1666001120694-3ebe8fd207be?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8UGFuZWVyJTIwVGlra2F8ZW58MHx8MHx8fDA%3D"
+                    alt="Paneer Tikka">
+                <h3>Paneer Tikka</h3>
+                <p>₹200</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="specials">
+        <h2>Special Offers</h2>
+        <div class="specials">
+            <div class="special-item">
+                <img src="https://images.unsplash.com/photo-1604152135912-04a022e23696" alt="Thali">
+                <h3>Weekend Thali</h3>
+                <p>Only ₹350 every Saturday & Sunday</p>
+            </div>
+            <div class="special-item">
+                <img src="https://images.unsplash.com/photo-1616895428703-598b1d6fe4f7?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8RnJlZSUyMERlc3NlcnR8ZW58MHx8MHx8fDA%3D"
+                    alt="Dessert">
+                <h3>Free Dessert</h3>
+                <p>Get a free dessert with every meal above ₹500</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="gallery">
+        <h2>Photo Gallery</h2>
+        <div class="gallery">
+            <img src="https://images.unsplash.com/photo-1466978913421-dad2ebd01d17?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+            <img src="https://images.unsplash.com/photo-1592861956120-e524fc739696?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjJ8fHJlc3RhdXJhbnR8ZW58MHx8MHx8fDA%3D" alt="">
+            <img src="https://images.unsplash.com/photo-1622115837997-90c89ae689f9?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDB8fHJlc3RhdXJhbnR8ZW58MHx8MHx8fDA%3D" alt="">
+            <img src="https://plus.unsplash.com/premium_photo-1676310055316-d73c9d5eeb51?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTh8fHJlc3RhdXJhbnR8ZW58MHx8MHx8fDA%3Ds" alt="">
+        </div>
+    </section>
+
+    <section>
+        <h2>Customer Testimonials</h2>
+        <div class="testimonials">
+            <div class="testimonial">
+                <p>"The best Indian food I've ever had! The flavors are incredible."</p>
+                <strong>- Priya S.</strong>
+            </div>
+            <div class="testimonial">
+                <p>"Lovely ambiance and friendly staff. Will definitely come again."</p>
+                <strong>- Arjun M.</strong>
+            </div>
+            <div class="testimonial">
+                <p>"Great value for money. The weekend Thali is a must-try."</p>
+                <strong>- Neha K.</strong>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <form>
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea rows="5" placeholder="Your Message"></textarea>
+            <button type="submit">Send</button>
+        </form>
+    </section>
+
+    <section id="location">
+        <h2>Find Us</h2>
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3930.051054174564!2d76.17837387464925!3d10.79744418935709!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTAuNzk3NCA3Ni4xNzgzNw!5e0!3m2!1sen!2sin!4v1690012345678">
+        </iframe>
+    </section>
+
+    <footer>
+        <p>Subscribe to our Newsletter</p>
+        <form>
+            <input type="email" placeholder="Your Email">
+            <button type="submit">Subscribe</button>
+        </form>
+        <p>© 2025 Yumm - Indian Restaurant. All Rights Reserved.</p>
+    </footer>
+</body>
+
+</html>

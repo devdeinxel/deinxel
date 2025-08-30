@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Deinxel | Design</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Bebas+Neue&family=Combo&family=Galdeano&family=Gochi+Hand&family=Oswald:wght@200..700&family=Rubik+Marker+Hatch&family=Single+Day&family=Tagesschrift&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&family=Zen+Dots&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <header>
+    <nav>
+      <div class="hamburger" id="hamburger">
+        ☰
+      </div>
+      <div class="navbar" id="navbar">
+        <a href="#services">Services</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <script>
+    const hamburger = document.getElementById("hamburger");
+    const navbar = document.getElementById("navbar");
+
+    hamburger.addEventListener("click", () => {
+      navbar.classList.toggle("active");
+    });
+
+    // Close menu when clicking a link
+    document.querySelectorAll(".navbar a").forEach(link => {
+      link.addEventListener("click", () => {
+        navbar.classList.remove("active");
+      });
+    });
+
+    // Close menu if clicked outside
+    window.addEventListener("click", (e) => {
+      if (!navbar.contains(e.target) && !hamburger.contains(e.target)) {
+        navbar.classList.remove("active");
+      }
+    });
+  </script>
+
+
+
+
+
+  <section class="hero">
+    <div class="heroSection1">
+      <h2>Hello, I'm Devan 👋</h2>
+      <h1>A WEB DESIGNER</h1>
+      <p>I help individuals and businesses bring their ideas to life through modern, responsive websites.</p>
+      <a href="#contact" class="btn">Hire Me</a>
+    </div>
+
+
+    <img src="DEINXEL1.png" alt="">
+
+  </section>
+
+
+
+
+
+
+  </section>
+
+  <section id="services" class="services">
+    <div class="contentsection">
+      <h2 id="center-heading">My Services</h2>
+
+      <div class="box-container">
+
+        <div class="sbox">
+          <h3><span>✅</span> 1. Website Design</h3>
+          <p>Clean, responsive, and modern websites tailored to your brand. From idea to launch — I design with purpose
+            and style.</p>
+          <h4>Includes:</h4>
+          <ul>
+            <li>Custom layout design</li>
+            <li>Fast loading</li>
+            <li>UI/UX focused design</li>
+          </ul>
+        </div>
+
+        <div class="sbox">
+          <h3>✅ 2. Portfolio Websites</h3>
+          <p>Show off your work with a stunning personal portfolio. Ideal for artists, photographers, developers, or
+            freelancers.</p>
+          <h4>Includes:</h4>
+          <ul>
+            <li>Project gallery</li>
+            <li>Filterable categories</li>
+            <li>About & contact sections</li>
+            <li>Clean, minimal layout</li>
+          </ul>
+        </div>
+
+        <div class="sbox">
+          <h3>✅ 3. Business / Startup Websites</h3>
+          <p>Professional websites built to attract and convert clients. Perfect for small businesses and startups.</p>
+          <h4>Includes:</h4>
+          <ul>
+            <li>Landing page</li>
+            <li>Performance boost</li>
+            <li>UI improvements</li>
+            <li>SEO-friendly structure</li>
+          </ul>
+        </div>
+
+        <div class="sbox">
+          <h3>✅ 4. One-Page Websites</h3>
+          <p>Perfect for personal brands or simple services. Everything you need in one clean page.</p>
+          <h4>Includes:</h4>
+          <ul>
+            <li>Hero section</li>
+            <li>Services</li>
+            <li>Contact details</li>
+            <li>Social links</li>
+          </ul>
+        </div>
+
+        <div class="sbox">
+          <h3>✅ 5. Redesign & Website Upgrade</h3>
+          <p>Already have a website? I’ll revamp it to be modern, fast, and mobile-friendly — while keeping your
+            identity intact.</p>
+          <h4>Includes:</h4>
+          <ul>
+            <li>Dark/light theme options</li>
+            <li>Performance boost</li>
+            <li>UI improvements</li>
+            <li>SEO-friendly structure</li>
+          </ul>
+        </div>
+
+        <div class="sbox">
+          <h3>✅ 6. Landing Pages</h3>
+          <p>High-converting pages for your product, event, or ad campaign — optimized for clicks and sales.</p>
+          <h4>Includes:</h4>
+          <ul>
+            <li>Eye-catching design</li>
+            <li>Fast load speed</li>
+            <li>UI/UX focused design</li>
+          </ul>
+        </div>
+
+      </div>
+
+
+      <p class="price_paragraph"><em><a href="#contact">Contact me</a> for pricing or custom packages.</em></p>
+    </div>
+  </section>
+
+  <section id="portfolio" class="portfolio">
+    <div class="proj">
+      <h2 id="center-heading">Portfolio (My Templates)</h2>
+      <div class="projects">
+        <div class="projbox">
+          <a href="templates\travel.html" class="btn">explore</a>
+        </div>
+
+        <div class="projbox">
+          <a href="templates\yumm.html" class="btn">explore</a>
+        </div>
+
+        <div class="projbox">
+          <a href="templates\modern-business-site\index.html" class="btn">explore</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <span id="contact"></span>
+  <h2 id="center-heading" id="contact">Contact Me</h2>
+
+  <section id="" class="contact">
+    <div class="formleft">
+
+      <form action="https://formspree.io/f/mrblykyq" method="POST">
+
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" placeholder="Your Name:" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" placeholder="Your Email:" required>
+
+        <label for="number">Ph number:</label>
+        <input type="number" id="number" name="number" placeholder="Your contact number:" required>
+
+        <label for="message">Message:</label>
+        <textarea name="message" id="message" rows="5" placeholder="Message:" required></textarea>
+
+        <section>
+          <button type="submit" class="btn">Send Message</button>
+          <button type="reset" class="btn">Clear All</button>
+        </section>
+      </form>
+    </div>
+
+    <div class="formright">
+      <h4>Get in Touch</h4>
+      <p>Email:</p>
+      <a href="https://mail.google.com/mail/?view=cm&fs=1&to=dev.deinxel@gmail.com">dev.deinxel@gmail.com</a>
+      <p>WhatsApp:</p>
+      <a href="https://wa.me/918848541003">+91 8848541003</a>
+      <p>Instagram:</p>
+      <a href="https://instagram.com/direct/t/dev_deinxel" target="_blank">
+        dev_deinxel
+      </a>
+
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 DEINXEL. All rights reserved.</p>
+  </footer>
+</body>
+
+</html>
